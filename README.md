@@ -24,7 +24,22 @@ minutes, documents, spreadsheets, follow-up decks, audio briefs, and Visual Note
 | Linux | arm64 | `memo_<version>_linux_arm64.tar.gz` |
 | Linux | amd64 | `memo_<version>_linux_amd64.tar.gz` |
 
-One line installs the right one:
+### Homebrew
+
+On macOS or Linux with [Homebrew](https://brew.sh):
+
+```bash
+brew install meeting-ai/tap/memo
+memo install-skill-md
+```
+
+The second command installs the agent skill file (see below). Upgrade with
+`brew upgrade memo`, not `memo upgrade`, so Homebrew keeps track of the version. The formula
+lives in [meeting-ai/homebrew-tap](https://github.com/meeting-ai/homebrew-tap).
+
+### Install script
+
+One line installs the right archive:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/meeting-ai/memo-cli/main/install.sh | bash
@@ -37,7 +52,9 @@ and installs the agent skill file. Set `MEMO_VERSION=v0.13.0` to pin a version o
 `MEMO_INSTALL_DIR=/usr/local/bin` to change the location. Read [install.sh](install.sh) first
 if you like to know what a script does before piping it to your shell.
 
-Prefer to do it by hand? Download the archive for your platform and `checksums.txt` from the
+### By hand
+
+Download the archive for your platform and `checksums.txt` from the
 release, check the sum, extract, and put `memo` on your `PATH`.
 
 ## Sign in
