@@ -17,6 +17,39 @@ minutes, documents, spreadsheets, follow-up decks, audio briefs, and Visual Note
 
 ## Install
 
+There are three ways to install memo. Each one works on macOS (Apple Silicon and Intel) and
+Linux (arm64 and amd64).
+
+### Option 1: Homebrew
+
+If you use [Homebrew](https://brew.sh):
+
+```bash
+brew install meeting-ai/tap/memo
+```
+
+To upgrade later, run `brew upgrade memo`.
+
+### Option 2: One-line installer
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/meeting-ai/memo-cli/main/install.sh | bash
+```
+
+It downloads the right archive for your machine from the
+[latest release](https://github.com/meeting-ai/memo-cli/releases/latest), checks its SHA-256
+sum, installs `memo` to `~/.local/bin`, adds that folder to your `PATH` if needed, and
+installs the agent skill file. Set `MEMO_VERSION=v0.13.0` to pin a version or
+`MEMO_INSTALL_DIR=/usr/local/bin` to change the location. You can read
+[install.sh](install.sh) before you run it.
+
+To upgrade later, run `memo upgrade`.
+
+### Option 3: Download it yourself
+
+Download the archive for your platform and `checksums.txt` from the
+[latest release](https://github.com/meeting-ai/memo-cli/releases/latest):
+
 | Platform | Architecture | Archive |
 |---|---|---|
 | macOS | Apple Silicon (arm64) | `memo_<version>_darwin_arm64.tar.gz` |
@@ -24,38 +57,8 @@ minutes, documents, spreadsheets, follow-up decks, audio briefs, and Visual Note
 | Linux | arm64 | `memo_<version>_linux_arm64.tar.gz` |
 | Linux | amd64 | `memo_<version>_linux_amd64.tar.gz` |
 
-### Homebrew
-
-On macOS or Linux with [Homebrew](https://brew.sh):
-
-```bash
-brew install meeting-ai/tap/memo
-memo install-skill-md
-```
-
-The second command installs the agent skill file (see below). Upgrade with
-`brew upgrade memo`, not `memo upgrade`, so Homebrew keeps track of the version. The formula
-lives in [meeting-ai/homebrew-tap](https://github.com/meeting-ai/homebrew-tap).
-
-### Install script
-
-One line installs the right archive:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/meeting-ai/memo-cli/main/install.sh | bash
-```
-
-The installer detects your platform, downloads the matching archive from the
-[latest release](https://github.com/meeting-ai/memo-cli/releases/latest), verifies its
-SHA-256 checksum, installs `memo` to `~/.local/bin`, adds that folder to your `PATH` if needed,
-and installs the agent skill file. Set `MEMO_VERSION=v0.13.0` to pin a version or
-`MEMO_INSTALL_DIR=/usr/local/bin` to change the location. Read [install.sh](install.sh) first
-if you like to know what a script does before piping it to your shell.
-
-### By hand
-
-Download the archive for your platform and `checksums.txt` from the
-release, check the sum, extract, and put `memo` on your `PATH`.
+Check the sum, extract the archive, and put `memo` on your `PATH`. To upgrade later, run
+`memo upgrade`.
 
 ## Sign in
 
