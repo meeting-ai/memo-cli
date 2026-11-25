@@ -110,7 +110,7 @@ if download "checksums.txt" "${TMPDIR}/checksums.txt" 2>/dev/null; then
     [ "$EXPECTED" = "$ACTUAL" ] || fail "Checksum mismatch for ${ARCHIVE_NAME}. Refusing to install."
     say "Checksum verified."
 else
-    say "Warning: checksums.txt not found in this release; skipping verification." >&2
+    fail "checksums.txt missing; refusing to install an unverified binary."
 fi
 
 # --- Install ---
